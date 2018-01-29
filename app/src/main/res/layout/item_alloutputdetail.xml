@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="产品名称："
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/textView_tagrcompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView32"
+        android:layout_toEndOf="@+id/textView32"
+        android:layout_toRightOf="@+id/textView32"
+        android:text="零售单位" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView32"
+        android:layout_alignStart="@+id/textView32"
+        android:layout_below="@+id/textView_tagrcompany"
+        android:text="产品编号："
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textView_caozuoren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_tagrcompany"
+        android:layout_toEndOf="@+id/textView34"
+        android:layout_toRightOf="@+id/textView34"
+        android:text="张明" />
+
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="整箱数量："
+        android:textColor="@color/black"
+        android:layout_below="@+id/textView34"
+        android:layout_toRightOf="@+id/textView_dengjiren"
+        android:layout_toEndOf="@+id/textView_dengjiren"
+        android:layout_alignStart="@+id/textView34"
+        />
+
+    <TextView
+        android:id="@+id/textView_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView34"
+        android:layout_toEndOf="@+id/textView43"
+        android:layout_toRightOf="@+id/textView43"
+        android:text="2018" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="箱码区间："
+        android:textColor="@color/black"
+        android:layout_below="@+id/textView43"
+        android:layout_alignLeft="@+id/textView43"
+        android:layout_alignStart="@+id/textView43" />
+
+    <TextView
+        android:id="@+id/textView_qujian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/textView_time"
+        android:layout_toRightOf="@+id/textView33"
+        android:layout_toEndOf="@+id/textView33" />
+
+
+</RelativeLayout>

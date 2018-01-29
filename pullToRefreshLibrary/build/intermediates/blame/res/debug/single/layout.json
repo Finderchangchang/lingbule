@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "E:\\zzwork\\lingbule\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
+        "source": "E:\\zzwork\\lingbule\\pullToRefreshLibrary\\src\\main\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\lingbule\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\lingbule\\pullToRefreshLibrary\\src\\main\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+    },
+    {
+        "merged": "E:\\zzwork\\lingbule\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header_vertical.xml",
+        "source": "E:\\zzwork\\lingbule\\pullToRefreshLibrary\\src\\main\\res\\layout\\pull_to_refresh_header_vertical.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\lingbule\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header_vertical.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\lingbule\\pullToRefreshLibrary\\src\\main\\res\\layout\\pull_to_refresh_header_vertical.xml"
+    }
+]

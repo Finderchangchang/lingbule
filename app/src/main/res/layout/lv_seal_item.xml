@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/red_pen" />
+
+    <TextView
+        android:id="@+id/seal_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView5"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/imageView5"
+        android:layout_toRightOf="@+id/imageView5"
+        android:text="1234567891234567"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/seal_createtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/seal_id"
+        android:layout_marginRight="20dp"
+        android:text="2016-08-26"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/seal_id"
+        android:layout_below="@+id/seal_id"
+        android:layout_marginTop="18dp"
+        android:text="购买人："
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/seal_person_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView35"
+        android:layout_toEndOf="@+id/textView35"
+        android:layout_toRightOf="@+id/textView35"
+        android:text="王晶晶"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/seal_person_name"
+        android:layout_marginLeft="20dp"
+        android:layout_toEndOf="@+id/seal_person_name"
+        android:layout_toRightOf="@+id/seal_person_name"
+        android:text="销售人："
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/seal_kai_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView39"
+        android:layout_toEndOf="@+id/textView39"
+        android:layout_toRightOf="@+id/textView39"
+        android:text="胡海珍"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView35"
+        android:layout_alignStart="@+id/textView35"
+        android:layout_below="@+id/seal_kai_name"
+        android:layout_marginTop="18dp"
+        android:text="交易金额："
+        android:textColor="#000000"
+        android:textSize="14sp"
+
+        />
+
+    <TextView
+        android:id="@+id/seal_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView51"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@+id/textView51"
+        android:layout_toRightOf="@+id/textView51"
+        android:text="1256.00"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/tv_seal_item_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/seal_kai_name"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:text="关闭"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/imageView5"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:background="#888888" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/seal_kai_name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:background="#888888" />
+</RelativeLayout>

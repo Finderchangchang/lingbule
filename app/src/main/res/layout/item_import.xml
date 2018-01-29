@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/ii_tvfahuo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="井陉县烟花爆竹批发公司"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:layout_alignBaseline="@+id/ii_tv1"
+        android:layout_alignBottom="@+id/ii_tv1"
+        android:layout_toEndOf="@+id/ii_tv1" />
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="0.5dp"
+    android:layout_below="@+id/ii_tvfahuo"
+    android:layout_margin="10dp"
+    android:background="@color/line_gray"
+    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ii_tv1"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:id="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/ii_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="操作人："
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/ii_chukuren"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="张丽"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/ii_tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="金额："
+            android:textSize="15dp"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/ii_totalmoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100.00元"
+            android:textColor="@color/colorPrimaryDark" />
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ii_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:text="出库单位："
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ii_tv1"
+        android:layout_below="@+id/linearLayout2"
+        android:text="入库时间："
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/ii_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16-10-20"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_toEndOf="@+id/textView5"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ii_time"
+        android:layout_toEndOf="@+id/ii_time"
+        android:text="入库类型："
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/ii_inwarehousetype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ddddd"
+        android:textColor="@color/black"
+        android:layout_alignBaseline="@+id/textView21"
+        android:layout_alignBottom="@+id/textView21"
+        android:layout_toEndOf="@+id/textView21" />
+
+
+</RelativeLayout>

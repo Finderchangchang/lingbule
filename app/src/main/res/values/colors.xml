@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008ed2</color>
+    <color name="colorPrimaryDark">#fe4a00</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#434143</color>
+    <color name="hui">#F0F0F0</color>
+    <color name="item_line">#edbfad</color>
+    <color name="title">#ff6700</color>
+    <color name="b1">#9dcb5e</color>
+    <color name="b2">#93c351</color>
+    <color name="red">#FB1717</color>
+    <color name="line_gray">#888888</color>
+    <color name="line">#edbfad</color>
+    <color name="mainback">#ffdaba</color>
+    <color name="itemcolor">#ffeae0</color>
+</resources>

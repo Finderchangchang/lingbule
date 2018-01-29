@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "E:\\zzwork\\lingbule\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "E:\\zzwork\\lingbule\\pullToRefreshLibrary\\src\\main\\res\\drawable\\indicator_bg_bottom.xml"
+    },
+    {
+        "merged": "E:\\zzwork\\lingbule\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "E:\\zzwork\\lingbule\\pullToRefreshLibrary\\src\\main\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\lingbule\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\lingbule\\pullToRefreshLibrary\\src\\main\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\lingbule\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\lingbule\\pullToRefreshLibrary\\src\\main\\res\\drawable\\indicator_bg_bottom.xml"
+    }
+]

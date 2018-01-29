@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/hui"
+    tools:context="com.xiaohu.fireworkssystem.ui.activity.SearchCompanyDetailActivity">
+    <com.xiaohu.fireworkssystem.view.MyTitleView
+        android:id="@+id/searchCompany_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftimg="@mipmap/back"
+        app:name="企业查询">
+
+    </com.xiaohu.fireworkssystem.view.MyTitleView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_white_fang"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="企业名称"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/et_companyName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_white_fang"
+                android:cursorVisible="true"
+                android:hint="请输入企业名称"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@drawable/text_cursor" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="企业类型"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_white_fang"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingRight="5dp">
+
+                <TextView
+                    android:id="@+id/textView_companytype"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:clickable="true"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text="请选择"
+                    android:textColor="@color/black"
+                    android:drawableRight="@mipmap/red_jiantouxia"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="法人代表"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/et_boss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_white_fang"
+                android:cursorVisible="true"
+                android:hint="请输入法人代表"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@drawable/text_cursor" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="负  责  人"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/et_leader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_white_fang"
+                android:cursorVisible="true"
+                android:hint="请输入负责人"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@drawable/text_cursor" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_companySearch"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/login_button_background"
+            android:text="查询"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>

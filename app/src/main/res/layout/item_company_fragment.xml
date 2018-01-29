@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView_companyname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="企业名称"
+        android:textSize="15sp"
+        android:textColor="@color/title"/>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView_companyname"
+        android:background="@color/line_gray"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView_companyname"
+        android:layout_below="@+id/textView9"
+        android:layout_marginTop="8dp"
+        android:text="法人代表："
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView10"
+        android:layout_below="@+id/textView10"
+        android:text="企业类型："
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView_boss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView10"
+        android:layout_toEndOf="@+id/textView10"
+        android:text="李磊"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/textView_companytype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView11"
+        android:layout_toEndOf="@+id/textView11"
+        android:text="零售单位"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView10"
+        android:layout_marginStart="70dp"
+        android:layout_toEndOf="@+id/textView10"
+        android:text="负责人："
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/textView_leader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="王梦"
+        android:textSize="14sp"
+        android:layout_alignBaseline="@+id/textView16"
+        android:layout_alignBottom="@+id/textView16"
+        android:layout_toEndOf="@+id/textView16" />
+
+
+</RelativeLayout>

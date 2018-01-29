@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        applicationId "com.hbgd.fireworkssystem"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.5"
+    }
+
+    buildTypes {
+        release {
+            // 混淆
+            minifyEnabled false
+            // Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            //shrinkResources true
+            // 前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+repositories {
+    jcenter() // If not already there
+}
+dependencies {
+    //扫描二维码
+    compile files('libs/ormlite-android-4.49-SNAPSHOT.jar')
+    //数据库
+    compile files('libs/ormlite-core-4.49-SNAPSHOT.jar')
+    //数据库
+    compile project(':pullToRefreshLibrary')
+    //listview刷新
+    //网络请求
+    compile files('libs/AraBMApiDev.jar')
+    //指纹识别
+    compile files('libs/AraBMApiFp.jar')
+    //指纹识别
+    compile files('libs/HsSerialProt.jar')
+    //指纹
+    //圆形图片缓存加载
+    //bugly 集成sdk
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
+    compile files('libs/zkandroidid300.jar')
+    compile files('libs/ZBarDecoder.jar')
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'pub.devrel:easypermissions:0.1.9'
+    compile 'com.jph.takephoto:takephoto_library:4.0.3'
+    compile 'com.github.florent37:camerafragment:1.0.7'
+    testCompile 'junit:junit:4.12'
+}

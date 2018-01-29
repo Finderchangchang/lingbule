@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="待入库单位："
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/textView_tagrcompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView32"
+        android:layout_toEndOf="@+id/textView32"
+        android:layout_toRightOf="@+id/textView32"
+        android:text="零售单位" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView32"
+        android:layout_alignStart="@+id/textView32"
+        android:layout_below="@+id/textView32"
+        android:text="操作人："
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textView_caozuoren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView32"
+        android:layout_toEndOf="@+id/textView34"
+        android:layout_toRightOf="@+id/textView34"
+        android:text="张明" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView34"
+        android:layout_alignStart="@+id/textView34"
+        android:layout_below="@+id/textView34"
+        android:text="登记人："
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textView_dengjiren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_caozuoren"
+        android:layout_toEndOf="@+id/textView38"
+        android:layout_toRightOf="@+id/textView38"
+        android:text="赵东" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView38"
+        android:layout_alignStart="@+id/textView38"
+        android:layout_below="@+id/textView38"
+        android:text="登记时间："
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textView_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_dengjiren"
+        android:layout_toEndOf="@+id/textView43"
+        android:layout_toRightOf="@+id/textView43"
+        android:text="2018" />
+</RelativeLayout>

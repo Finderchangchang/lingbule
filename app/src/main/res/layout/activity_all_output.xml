@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xiaohu.fireworkssystem.ui.activity.AllOutputActivity">
+    <com.xiaohu.fireworkssystem.view.MyTitleView
+        android:id="@+id/allout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftimg="@mipmap/back"
+        app:name="出入库登记"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp">
+
+    </com.xiaohu.fireworkssystem.view.MyTitleView>
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButton_allout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/title_background_select"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="整单出库"
+            android:textColor="#ff6700" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/line_gray" />
+
+        <RadioButton
+            android:id="@+id/radioButton_out"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/titlle_bg_normal"
+            android:button="@null"
+            android:gravity="center"
+            android:text="出库登记"
+            android:textColor="#808A87" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/line_gray" />
+
+        <RadioButton
+            android:id="@+id/radioButton_in"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/titlle_bg_normal"
+            android:button="@null"
+            android:gravity="center"
+            android:text="退货入库"
+            android:textColor="#808A87" />
+
+    </RadioGroup>
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/alloutput_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@drawable/list_item_divider_salemanagement"
+        android:dividerHeight="1dp"></com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+</LinearLayout>

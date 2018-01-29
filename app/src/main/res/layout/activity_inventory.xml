@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xiaohu.fireworkssystem.ui.activity.InventoryActivity">
+
+
+
+    <com.xiaohu.fireworkssystem.view.MyTitleView
+        android:id="@+id/inventory_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftimg="@mipmap/back"
+        app:name="盘点登记" >
+    </com.xiaohu.fireworkssystem.view.MyTitleView>
+
+
+    <LinearLayout
+        android:id="@+id/ll_bianhao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_white_fang"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_goumairen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_xiaoshou_code"
+            android:text="操作人："
+            android:textColor="@color/material_blue_grey_900" />
+
+        <TextView
+            android:id="@+id/tv_operator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_xiaoshou_code"
+            android:layout_toRightOf="@+id/tv_goumairen"
+            android:layout_weight="1"
+            android:text="请录入操作人信息" />
+
+        <Button
+            android:id="@+id/btn_operator"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:background="@drawable/login_button_background"
+
+            android:text="人员登记"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_seal_add_good"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_white_fang"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <TextView
+
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="商品扫描："
+            android:textColor="@color/title" />
+        <TextView
+            android:id="@+id/tv_5"
+            android:layout_toLeftOf="@+id/img_allgoods_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="多箱 "
+            android:textColor="@color/title" />
+        <ImageView
+            android:id="@+id/img_allgoods_scan"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_4"
+            android:src="@mipmap/lan_scan"
+            android:layout_marginRight="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_4"
+            android:layout_toLeftOf="@+id/img_goods_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="单箱 "
+            android:textColor="@color/title" />
+        <ImageView
+            android:id="@+id/img_goods_scan"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/lan_scan"
+            android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_fang"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="名称" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="箱码" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="库存" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=" 现有" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="  操作" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_inventory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:transcriptMode="alwaysScroll"></ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_fang"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="盘点原因："
+            android:textColor="@color/material_blue_grey_900" />
+
+        <TextView
+            android:id="@+id/tv_inventoryreason"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="盘点库存"
+            android:clickable="true"/>
+
+        <Button
+            android:id="@+id/btn_inventory_save"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/login_button_background"
+            android:text="保存"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

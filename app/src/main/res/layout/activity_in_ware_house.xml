@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xiaohu.fireworkssystem.ui.activity.InWareHouseActivity">
+    <com.xiaohu.fireworkssystem.view.MyTitleView
+        android:id="@+id/in_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftimg="@mipmap/back"
+        app:name="出入库登记">
+
+    </com.xiaohu.fireworkssystem.view.MyTitleView>
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/radioButton_allout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/titlle_bg_normal"
+            android:button="@null"
+            android:gravity="center"
+            android:text="整单出库"
+            android:textColor="#808A87" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/line_gray" />
+
+        <RadioButton
+            android:id="@+id/radioButton_out"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/titlle_bg_normal"
+            android:button="@null"
+            android:gravity="center"
+            android:text="出库登记"
+            android:textColor="#808A87" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/line_gray" />
+
+        <RadioButton
+            android:id="@+id/radioButton_in"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/title_background_select"
+            android:button="@null"
+            android:gravity="center"
+            android:checked="true"
+            android:text="退货入库"
+            android:textColor="#ff6700" />
+
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:id="@+id/ll_bianhao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_white_fang"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_goumairen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_xiaoshou_code"
+            android:text="法人信息："
+            android:textColor="@color/material_blue_grey_900" />
+
+        <TextView
+            android:id="@+id/inbossname_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_xiaoshou_code"
+            android:layout_toRightOf="@+id/tv_goumairen"
+            android:layout_weight="1"
+            android:text="请录入法人信息" />
+
+        <Button
+            android:id="@+id/btn_seal_personread"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:background="@drawable/login_button_background"
+            android:text="法人登记"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_seal_add_good"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_white_fang"
+        android:gravity="center_vertical"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp">
+
+        <TextView
+
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="商品扫描："
+            android:textColor="@color/title" />
+        <TextView
+            android:id="@+id/tv_5"
+            android:layout_toLeftOf="@+id/iv_allinscan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="多箱 "
+            android:textColor="@color/title" />
+        <ImageView
+            android:id="@+id/iv_allinscan"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_4"
+            android:src="@mipmap/lan_scan"
+            android:layout_marginRight="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_4"
+            android:layout_toLeftOf="@+id/iv_inscan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="单箱 "
+            android:textColor="@color/title" />
+        <ImageView
+            android:id="@+id/iv_inscan"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_6"
+            android:src="@mipmap/lan_scan"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"/>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_white_fang"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="请选择购买商品:"
+            android:textColor="@color/colorPrimary" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/seal_jian_right" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_fang"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="名称" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="单价/箱" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="库存" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="箱码" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="操作" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_inwarehouse"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:transcriptMode="alwaysScroll"></ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_fang"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="总金额：￥"
+            android:textColor="@color/material_blue_grey_900" />
+
+        <TextView
+            android:id="@+id/add_inwarehouse_money"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0.000元"
+            android:textColor="@color/red" />
+
+        <Button
+            android:id="@+id/btn_inwarehouse_save"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/login_button_background"
+            android:text="保存"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginRight="50dp"
+            android:background="@mipmap/shadow"
+            android:text="保存"
+            android:textSize="18sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@mipmap/shadow"
+            android:text="打印"
+            android:textSize="18sp" />
+    </LinearLayout>
+</LinearLayout>

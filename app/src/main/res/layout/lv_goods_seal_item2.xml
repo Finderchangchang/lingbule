@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_goods_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/seal_item_gname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.3"
+        android:gravity="center"
+        android:text="阳光 1*6 百鸟朝凤"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/seal_goods_perice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:gravity="center"
+        android:text="30.5/个" />
+
+    <TextView
+        android:id="@+id/stock_goods_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:gravity="center"
+        android:text="185" />
+
+
+
+
+
+    <ImageView
+        android:id="@+id/imageView_gouwuche"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@mipmap/gouwuche"
+        android:button="@null"
+        android:visibility="gone" />
+</LinearLayout>

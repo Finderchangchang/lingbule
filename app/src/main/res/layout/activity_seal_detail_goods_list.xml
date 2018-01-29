@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <com.xiaohu.fireworkssystem.view.MyTitleView
+        android:id="@+id/seal_detail_goods_lsit_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftimg="@mipmap/back"
+        app:name="订单产品详情" />
+
+    <LinearLayout
+        android:id="@+id/tv_seal_goods_list_lv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_seal_goods_list_title"
+        android:background="@color/hui"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="名称" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="总价" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="  类型" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="数量" />
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/seal_goods_list_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/tv_seal_goods_list_lv_title"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="11"
+        android:divider="@drawable/list_item_divider_salemanagement"
+        android:dividerHeight="1dp"></ListView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1.5"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:paddingTop="5dp">
+    <Button
+        android:id="@+id/button_print"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/login_button_background"
+        android:text="打印"
+        android:textColor="@color/white" />
+    <Button
+        android:id="@+id/button_tuihuo"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/login_button_background"
+        android:text="退货"
+        android:textColor="@color/white"
+        android:layout_marginLeft="20dp"/>
+</LinearLayout>
+
+
+</LinearLayout>
