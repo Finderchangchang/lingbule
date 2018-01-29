@@ -75,14 +75,13 @@ public class SettingListener {
 
     //获取设备信息
     public void getTerminal(String sam) {
-        if(null==sam || "".equals(sam) ){
-            view.getSamCode(false, "设备验证失败","");
-        }
-        else {
+        if (null == sam || "".equals(sam)) {
+            view.getSamCode(false, "设备验证失败", "");
+        } else {
             stringIP = utils.ReadString("IP");
             String companyid = utils.ReadString(COMPANYID);
             final String finalSam = sam;
-            okHttpUtils.requestGetByAsyn(stringIP, "SetTerminal", "'{\"TerminalCode\":\"" + sam + "\","+"\"TerminalType\":\"02\","+"\"CompanyId\":\"" + companyid + "\""+"}'", new ReqCallBack() {
+            okHttpUtils.requestGetByAsyn(stringIP, "SetTerminal", "'{\"TerminalCode\":\"" + sam + "\"," + "\"TerminalType\":\"02\"," + "\"CompanyId\":\"" + companyid + "\"" + "}'", new ReqCallBack() {
                 @Override
                 public void onReqSuccess(String result) {
                     //System.out.println("searchwarehouse:" + result);
@@ -91,14 +90,14 @@ public class SettingListener {
                     if (model.isSuccess()) {
                         view.getSamCode(true, "", finalSam);
                     } else {
-                        view.getSamCode(false, "设备验证失败","");
+                        view.getSamCode(false, "设备验证失败", "");
                     }
                 }
 
                 @Override
                 public void onReqFailed(String errorMsg) {
                     //System.out.println("searchwarehouse:544555" );
-                    view.getSamCode(false, "网络错误","");
+                    view.getSamCode(false, "网络错误", "");
                 }
             });
         }
@@ -117,8 +116,8 @@ public class SettingListener {
                     CompanyModel user = gson.fromJson(model.getData(), CompanyModel.class);
                     //utils.WriteString(PARENTCOMPANYID, user.getParentCompanyID());
                     utils.WriteString(CompanyName, user.getCompanyName());
-                    utils.WriteString(LicenseNumberValidity,user.getLicenseNumberValidity());
-                    utils.WriteString(BusinessLicenseNumberValidity,user.getBusinessLicenseNumberValidity());
+                    utils.WriteString(LicenseNumberValidity, user.getLicenseNumberValidity());
+                    utils.WriteString(BusinessLicenseNumberValidity, user.getBusinessLicenseNumberValidity());
                     view.getUserInfo(true, "");
                 } else {
                     view.getUserInfo(false, "登录失败");
@@ -134,6 +133,11 @@ public class SettingListener {
 
     public void getCode() {
         codes = myContext.getResources().getStringArray(R.array.CodeNameList);
+        getCodeByName(0);
+    }
+
+    public void getRegCode() {
+        codes = myContext.getResources().getStringArray(R.array.RegCodeNameList);
         getCodeByName(0);
     }
 
@@ -168,7 +172,11 @@ public class SettingListener {
                             }
                             int inex = index + 1;
                             if (inex == codes.length) {
-                                view.getCodeResult(true, "下载成功");
+                                if (codes.length == 2) {
+                                    view.getCodeResult(true, "注册下载成功");
+                                } else {
+                                    view.getCodeResult(true, "下载成功");
+                                }
                             } else {
                                 getCodeByName(inex);
                             }
@@ -189,7 +197,7 @@ public class SettingListener {
 
     public void RefushCode() {
         stringIP = utils.ReadString("IP");
-        codes = myContext.getResources().getStringArray(R.array.CodeNameList);
+        codes = myContext.getResources().getStringArray(R.array.AllCodeNameList);
         okHttpUtils.requestGetByAsyn(stringIP, "GetModified", "", new ReqCallBack() {
                     @Override
                     public void onReqSuccess(String result) {
@@ -201,7 +209,7 @@ public class SettingListener {
                             };
                             List<SysCodeModel> codeModel = new ArrayList<SysCodeModel>();
                             codeModel = gson.fromJson(model.getData(), list.getType());
-                            if(codeModel!=null) {
+                            if (codeModel != null) {
                                 List<SysCodeModel> sysList = new ArrayList<SysCodeModel>();
                                 if (codeModel.size() > 0) {
                                     for (int i = 0; i < codeModel.size(); i++) {
@@ -221,7 +229,7 @@ public class SettingListener {
                                 } else {
                                     view.getCodeResult(true, "已经是最新字典！");
                                 }
-                            }else{
+                            } else {
                                 view.getCodeResult(true, "已经是最新字典！");
                             }
                         } else {

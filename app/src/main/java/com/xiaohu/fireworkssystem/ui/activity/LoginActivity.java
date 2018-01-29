@@ -80,9 +80,8 @@ public class LoginActivity extends Activity implements SettingView, CheckAPKView
     public static LoginActivity loginmin;
     //登录返回的企业信息
     private RegisterModel userModel;
-private Button button_linregister;
+    private Button button_linregister;
     private LLDialog llDialog;
-
 
 
     @Override
@@ -97,13 +96,16 @@ private Button button_linregister;
         //字典查询
         CodeDao dao = new CodeDao(LoginActivity.this);
         List<CodeModel> list = dao.QueryAll();
-        if (list.size() <= 0) {
+        if (list.size() == 0) {
             //字典查询
-            dao.deleteall(list);
-            listener.getCode();
+            String[] codes = getResources().getStringArray(R.array.RegCodeNameList);
+            for (String s : codes) {
+                CodeModel model = new CodeModel();
+                model.setCodeName(s);
+                dao.delete(model);
+            }
+            listener.getRegCode();
         }
-
-
     }
 
     //判断版本更新
@@ -210,19 +212,20 @@ private Button button_linregister;
                 startActivity(intent);
                 finish();*/
 
-                    bt_login.setEnabled(false);
-                    circularJumpLoadingAnim.setVisibility(View.VISIBLE);
-                    circularJumpLoadingAnim.startAnim();
-                    LOGo();
+                bt_login.setEnabled(false);
+                circularJumpLoadingAnim.setVisibility(View.VISIBLE);
+                circularJumpLoadingAnim.startAnim();
+                LOGo();
 
             }
         });
         button_linregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              startActivity(new Intent().setClass(LoginActivity.this,TemporaryActivity.class));
+                startActivityForResult(new Intent(LoginActivity.this, TemporaryActivity.class), 11);
             }
         });
+
         ivBottom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -240,7 +243,7 @@ private Button button_linregister;
                     dialog.setSave(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                           // if (dialog.getPSW().equals(Utils.GetNOWTIMEPASSWORD())) {
+                            // if (dialog.getPSW().equals(Utils.GetNOWTIMEPASSWORD())) {
                             if ("hbgd".equals(dialog.getPSW())) {
                                 Intent intent = new Intent(LoginActivity.this, RegistActivity.class);
                                 startActivity(intent);
@@ -256,9 +259,25 @@ private Button button_linregister;
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 11 && resultCode == 12) {
+            if (data != null) {
+                String user_name = data.getStringExtra("user_name");
+                utils.WriteString("username", user_name);
+                editText_name.setText(user_name);
+                editText_name.setSelection(user_name.length());
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
     public void getCodeResult(boolean isTrue, String mes) {
         this.mes = mes;
         this.isResult = isTrue;
+        if (mes.equals("注册下载成功")) {
+            loadCodes();
+        }
         LoginActivity.this.runOnUiThread(run);
     }
 
@@ -270,7 +289,7 @@ private Button button_linregister;
     }
 
     @Override
-    public void getSamCode(boolean isTrue, String mes,String sam) {
+    public void getSamCode(boolean isTrue, String mes, String sam) {
 
     }
 
@@ -278,20 +297,17 @@ private Button button_linregister;
     Runnable userRun = new Runnable() {
         @Override
         public void run() {
-            circularJumpLoadingAnim.setVisibility(View.INVISIBLE);
+
             if (isResult) {
-
                 utils.WriteString(TISHI, "0");
-                utils.WriteString("CompanyType",userModel.getCompanyType());
-                if ("02".equals(userModel.getCompanyType())){
-
+                utils.WriteString("CompanyType", userModel.getCompanyType());
+                if ("02".equals(userModel.getCompanyType())) {
                     startActivity(new Intent().setClass(LoginActivity.this, Main2Activity.class));
                     finish();
-                }else if ("03".equals(userModel.getCompanyType())||"05".equals(userModel.getCompanyType())){
+                } else if ("03".equals(userModel.getCompanyType()) || "05".equals(userModel.getCompanyType())) {
                     startActivity(new Intent().setClass(LoginActivity.this, MainActivity.class));
                     finish();
                 }
-
             } else {
                 bt_login.setEnabled(true);
                 CodeDao dao = new CodeDao(LoginActivity.this);
@@ -299,8 +315,25 @@ private Button button_linregister;
                 Toast.makeText(LoginActivity.this, mes, Toast.LENGTH_SHORT).show();
                 mes = "";
             }
+            circularJumpLoadingAnim.setVisibility(View.INVISIBLE);
         }
     };
+
+    //加载字典项
+    void loadCodes() {
+        CodeDao dao = new CodeDao(LoginActivity.this);
+        List<CodeModel> list = dao.QueryAll();
+        if (list.size() > 1) {
+            //字典查询
+            String[] codes = getResources().getStringArray(R.array.CodeNameList);
+            for (String s : codes) {
+                CodeModel model = new CodeModel();
+                model.setCodeName(s);
+                dao.delete(model);
+            }
+            listener.getCode();
+        }
+    }
 
     static class HideClick extends Thread {
         public static volatile int sIsAlive = 0;
@@ -332,7 +365,7 @@ private Button button_linregister;
                 Toast.makeText(LoginActivity.this, mes, Toast.LENGTH_SHORT).show();
                 mes = "";
             } else {
-                if (!"".equals(editText_name.getText().toString().trim())&&!"".equals(editText_password.getText().toString().trim())){
+                if (!"".equals(editText_name.getText().toString().trim()) && !"".equals(editText_password.getText().toString().trim())) {
                     listener.getUserInfo(editText_name.getText().toString().trim(), editText_password.getText().toString().trim());
                 }
 
@@ -379,9 +412,8 @@ private Button button_linregister;
             String password = editText_password.getText().toString();
             String name = editText_name.getText().toString();
 
-             String shouquan = "";
-                shouquan=Utils.getMYImei(((TelephonyManager) getSystemService(TELEPHONY_SERVICE))
-                        .getDeviceId());
+            String shouquan = "";
+            shouquan = Utils.getMYImei(((TelephonyManager) getSystemService(TELEPHONY_SERVICE)).getDeviceId());
             String str = "'{\"LoginName\":\"" + name + "\",\"PassWord\":\"" + password + "\",\"TerminalCode\":\"" + "CF-49-49-8C-95" + "\",\"DeviceCode\":\"" + shouquan + "\"}'";
             okHttpUtils.requestGetByAsyn(stringIP, "AppClientLogin", str, new ReqCallBack() {
                 @Override
@@ -397,7 +429,7 @@ private Button button_linregister;
                         //保存userID，公司ID
                         utils.WriteString("UserId", userModel.getUserId());
                         utils.WriteString(COMPANYID, userModel.getCompanyId());
-                        utils.WriteString("COMPANYBOSS",userModel.getBoss() );
+                        utils.WriteString("COMPANYBOSS", userModel.getBoss());
                         utils.WriteString("COMPANYCERTNUMBER", userModel.getBossCertNumber());
                         utils.WriteString("COMPANYBOSSADDRESS", userModel.getBossAddress());
                         utils.WriteString("COMPANYBOSSNATIONNAME", userModel.getBossNationName());
@@ -408,24 +440,24 @@ private Button button_linregister;
                         utils.WriteString(KEY_IMEI_MI, userModel.getDeviceCode());
                         utils.WriteString(KEY_TOKEN, userModel.getAuthorizedCode());
                         //存储登录名，密码
-                        if (checkBox.isChecked()){
+                        if (checkBox.isChecked()) {
                             utils.WriteString("username", editText_name.getText().toString().trim());
                             utils.WriteString("password", editText_password.getText().toString().trim());
-                        }else {
+                        } else {
                             utils.WriteString("username", "");
                             utils.WriteString("password", "");
                         }
                         //字典查询
-                        CodeDao dao = new CodeDao(LoginActivity.this);
-                        List<CodeModel> list = dao.QueryAll();
-                        if (list.size() <= 0) {
-                            //字典查询
-                            dao.deleteall(list);
-                            listener.getCode();
-                        } else {
-                            listener.getUserInfo(editText_name.getText().toString().trim(), editText_password.getText().toString().trim());
-                            //listener.RefushCode();
-                        }
+//                        CodeDao dao = new CodeDao(LoginActivity.this);
+//                        List<CodeModel> list = dao.QueryAll();
+//                        if (list.size() <= 0) {
+//                            //字典查询
+//                            dao.deleteall(list);
+//                            listener.getCode();
+//                        } else {
+                        listener.getUserInfo(editText_name.getText().toString().trim(), editText_password.getText().toString().trim());
+                        //listener.RefushCode();
+//                        }
 
                     } else {
                         mes = model.getMessage();
@@ -441,7 +473,6 @@ private Button button_linregister;
             });
         }
     }
-
 
 
     //网络连接dialog

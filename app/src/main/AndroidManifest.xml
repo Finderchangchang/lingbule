@@ -33,8 +33,7 @@
         android:theme="@style/NoTitleAppTheme">
         <activity
             android:name=".ui.activity.LoginActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.LoadingActivity"
             android:screenOrientation="portrait">
@@ -193,12 +192,15 @@
             android:configChanges="locale|layoutDirection|orientation|screenSize|keyboardHidden|keyboard|screenLayout"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name=".ui.activity.AllOutputActivity"
+        <activity
+            android:name=".ui.activity.AllOutputActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.AllOutoutDetailActivity"
+        <activity
+            android:name=".ui.activity.AllOutoutDetailActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.AllOutputPersonViewActivity"
-            android:screenOrientation="portrait" ></activity>
+        <activity
+            android:name=".ui.activity.AllOutputPersonViewActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

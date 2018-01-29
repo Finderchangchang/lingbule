@@ -45,6 +45,15 @@ public class CodeDao {
         }
     }
 
+    //删除
+    public void delete(CodeModel model) {
+        try {
+            codeDao.delete(model);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void deleteall(List<CodeModel> list) {
         try {
             codeDao.delete(list);

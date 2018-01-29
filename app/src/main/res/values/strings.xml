@@ -1,5 +1,20 @@
 <resources>
     <string name="app_name">烟花爆竹信息采集追溯管理系统</string>
+    <array name="AllCodeNameList">
+        <item>Code_BillOrderState</item><!--销售单状态-->
+        <item>Code_Nation</item><!--民族-->
+        <item>Code_ProductClass</item><!--产品类型-->
+        <item>Code_ProductPackagingUnit</item><!--产品包装单位-->
+        <item>Code_Sex</item><!--性别-->
+        <item>Code_Purpose</item><!--购买用途-->
+        <item>Code_EmployeeType</item><!--人员类型-->
+        <item>Code_EmployeeState</item><!--人员状态-->
+        <item>Code_UseClass</item><!--使用对象-->
+        <item>Code_Department</item><!--发证机关-->
+        <item>Code_CretEmployeeType</item><!--发证类型-->
+        <item>Code_CompanyType</item><!--企业类型-->
+        <item>Code_Area</item><!--辖区-->
+    </array>
     <array name="CodeNameList">
         <item>Code_BillOrderState</item><!--销售单状态-->
         <item>Code_Nation</item><!--民族-->
@@ -9,13 +24,17 @@
         <item>Code_Purpose</item><!--购买用途-->
         <item>Code_EmployeeType</item><!--人员类型-->
         <item>Code_EmployeeState</item><!--人员状态-->
-        <item>Code_CompanyType</item><!--企业类型-->
         <item>Code_UseClass</item><!--使用对象-->
         <item>Code_Department</item><!--发证机关-->
         <item>Code_CretEmployeeType</item><!--发证类型-->
+        <!--<item>Code_CompanyType</item>企业类型
+        <item>Code_Area</item>辖区-->
+    </array>
+    <!--注册需要加载的字典信息-->
+    <array name="RegCodeNameList">
+        <item>Code_CompanyType</item><!--企业类型-->
         <item>Code_Area</item><!--辖区-->
     </array>
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_stock_manager">StockManagerActivity</string>

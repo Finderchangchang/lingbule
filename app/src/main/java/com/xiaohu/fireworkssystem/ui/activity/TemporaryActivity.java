@@ -52,12 +52,13 @@ public class TemporaryActivity extends TakePhotoActivity implements LinRegisterV
     //进度框
     private ProgressDialog mProgressDialog;
     private String strloginname = "";
-    private String mes = "", strGUID= "";
+    private String mes = "", strGUID = "";
     private Utils utils;
-    private EditText edit_password,edit_password2,edit_id,edit_companyname,edit_xuke,edit_phone,edit_address,edit_boss,edit_idcard;
-    private TextView tv_Area,tv_DeviceCode;
+    private EditText edit_password, edit_password2, edit_id, edit_companyname, edit_xuke, edit_phone, edit_address, edit_boss, edit_idcard;
+    private TextView tv_Area, tv_DeviceCode;
     private CodeDao dao;
     private SpinnerDialog dialog;//选择
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,33 +85,33 @@ public class TemporaryActivity extends TakePhotoActivity implements LinRegisterV
         bt_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (null!=bm){
+                if (null != bm) {
                     companyModel.setBase64LicenseImage(Utils.encodeBitmap(bm));
 
                 }
-                if("".equals(edit_password.getText().toString().trim())){
-                    Toast.makeText(TemporaryActivity.this,"请输入密码",Toast.LENGTH_SHORT).show();
-                }else if("".equals(edit_password2.getText().toString().trim())){
-                    Toast.makeText(TemporaryActivity.this,"请输入确认密码",Toast.LENGTH_SHORT).show();
-                }else if (!edit_password.getText().toString().equals(edit_password2.getText().toString())){
-                    Toast.makeText(TemporaryActivity.this,"密码不一致",Toast.LENGTH_SHORT).show();
-                }else if("".equals(edit_id.getText().toString().trim())){
-                    Toast.makeText(TemporaryActivity.this,"请输入注册编码",Toast.LENGTH_SHORT).show();
-                }else if("".equals(edit_companyname.getText().toString().trim())){
-                    Toast.makeText(TemporaryActivity.this,"请输入企业名称",Toast.LENGTH_SHORT).show();
-                }else if("".equals(edit_boss.getText().toString().trim())){
-                    Toast.makeText(TemporaryActivity.this,"请输入法人名称",Toast.LENGTH_SHORT).show();
-                }else if("".equals(edit_idcard.getText().toString().trim())){
-                    Toast.makeText(TemporaryActivity.this,"请输入法人证件号码",Toast.LENGTH_SHORT).show();
-                }else if("请选择".equals(tv_Area.getText().toString().trim())){
-                    Toast.makeText(TemporaryActivity.this,"请选择辖区",Toast.LENGTH_SHORT).show();
-                }else if("".equals(edit_xuke.getText().toString().trim())){
-                    Toast.makeText(TemporaryActivity.this,"请输入许可证",Toast.LENGTH_SHORT).show();
+                if ("".equals(edit_password.getText().toString().trim())) {
+                    Toast.makeText(TemporaryActivity.this, "请输入密码", Toast.LENGTH_SHORT).show();
+                } else if ("".equals(edit_password2.getText().toString().trim())) {
+                    Toast.makeText(TemporaryActivity.this, "请输入确认密码", Toast.LENGTH_SHORT).show();
+                } else if (!edit_password.getText().toString().equals(edit_password2.getText().toString())) {
+                    Toast.makeText(TemporaryActivity.this, "密码不一致", Toast.LENGTH_SHORT).show();
+                } else if ("".equals(edit_id.getText().toString().trim())) {
+                    Toast.makeText(TemporaryActivity.this, "请输入注册编码", Toast.LENGTH_SHORT).show();
+                } else if ("".equals(edit_companyname.getText().toString().trim())) {
+                    Toast.makeText(TemporaryActivity.this, "请输入企业名称", Toast.LENGTH_SHORT).show();
+                } else if ("".equals(edit_boss.getText().toString().trim())) {
+                    Toast.makeText(TemporaryActivity.this, "请输入法人名称", Toast.LENGTH_SHORT).show();
+                } else if ("".equals(edit_idcard.getText().toString().trim())) {
+                    Toast.makeText(TemporaryActivity.this, "请输入法人证件号码", Toast.LENGTH_SHORT).show();
+                } else if ("请选择".equals(tv_Area.getText().toString().trim())) {
+                    Toast.makeText(TemporaryActivity.this, "请选择辖区", Toast.LENGTH_SHORT).show();
+                } else if ("".equals(edit_xuke.getText().toString().trim())) {
+                    Toast.makeText(TemporaryActivity.this, "请输入许可证", Toast.LENGTH_SHORT).show();
                 }/*else if(null==bm){
                     Toast.makeText(TemporaryActivity.this,"请拍摄许可证图片",Toast.LENGTH_SHORT).show();
-                }*/else if("".equals(edit_phone.getText().toString().trim())){
-                    Toast.makeText(TemporaryActivity.this,"请输入联系电话",Toast.LENGTH_SHORT).show();
-                }else {
+                }*/ else if ("".equals(edit_phone.getText().toString().trim())) {
+                    Toast.makeText(TemporaryActivity.this, "请输入联系电话", Toast.LENGTH_SHORT).show();
+                } else {
                     companyModel.setCreateUserId("APP");
                     companyModel.setDeviceCode(tv_DeviceCode.getText().toString());
                     companyModel.setTerminalCode(edit_id.getText().toString().trim());
@@ -138,8 +139,8 @@ public class TemporaryActivity extends TakePhotoActivity implements LinRegisterV
         img_base64Image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                File file=new File(Environment.getExternalStorageDirectory(), "/temp/"+System.currentTimeMillis() + ".jpg");
-                if (!file.getParentFile().exists())file.getParentFile().mkdirs();
+                File file = new File(Environment.getExternalStorageDirectory(), "/temp/" + System.currentTimeMillis() + ".jpg");
+                if (!file.getParentFile().exists()) file.getParentFile().mkdirs();
                 Uri imageUri = Uri.fromFile(file);
                 configCompress(takePhoto);
                 configTakePhotoOption(takePhoto);
@@ -153,7 +154,7 @@ public class TemporaryActivity extends TakePhotoActivity implements LinRegisterV
         bt_register = (Button) findViewById(R.id.bt_register);
         companyModel = new CompanyModel();
         img_base64Image = (ImageView) findViewById(R.id.img_base64Image);
-        listener = new LinRegisterListener(this,TemporaryActivity.this);
+        listener = new LinRegisterListener(this, TemporaryActivity.this);
         takePhoto = getTakePhoto();
         utils = new Utils(TemporaryActivity.this);
         edit_password = (EditText) findViewById(R.id.edit_password);
@@ -177,38 +178,41 @@ public class TemporaryActivity extends TakePhotoActivity implements LinRegisterV
 
         //设备描述符
         strGUID = java.util.UUID.randomUUID().toString();
-        strGUID = strGUID.replaceAll("-","");
-        strGUID = strGUID.substring(0,20);
-            tv_DeviceCode.setText(Utils.getMYImei(((TelephonyManager) getSystemService(TELEPHONY_SERVICE))
-                    .getDeviceId()));
+        strGUID = strGUID.replaceAll("-", "");
+        strGUID = strGUID.substring(0, 20);
+        tv_DeviceCode.setText(Utils.getMYImei(((TelephonyManager) getSystemService(TELEPHONY_SERVICE))
+                .getDeviceId()));
 
     }
+
     //拍照设置
-    private void configTakePhotoOption(TakePhoto takePhoto){
-        TakePhotoOptions.Builder builder=new TakePhotoOptions.Builder();
+    private void configTakePhotoOption(TakePhoto takePhoto) {
+        TakePhotoOptions.Builder builder = new TakePhotoOptions.Builder();
         builder.setCorrectImage(true);
         takePhoto.setTakePhotoOptions(builder.create());
 
     }
-    private void configCompress(TakePhoto takePhoto){
-        takePhoto.onEnableCompress(null,false);
+
+    private void configCompress(TakePhoto takePhoto) {
+        takePhoto.onEnableCompress(null, false);
         //102400
-        int maxSize= Integer.parseInt("512000");
-        int width= Integer.parseInt("800");
-        int height= Integer.parseInt("800");
-        boolean showProgressBar=false;
+        int maxSize = Integer.parseInt("512000");
+        int width = Integer.parseInt("800");
+        int height = Integer.parseInt("800");
+        boolean showProgressBar = false;
         boolean enableRawFile = true;
         CompressConfig config;
-        config=new CompressConfig.Builder()
+        config = new CompressConfig.Builder()
                 .setMaxSize(maxSize)
-                .setMaxPixel(width>=height? width:height)
+                .setMaxPixel(width >= height ? width : height)
                 .enableReserveRaw(enableRawFile)
                 .create();
 
-        takePhoto.onEnableCompress(config,showProgressBar);
+        takePhoto.onEnableCompress(config, showProgressBar);
 
 
     }
+
     @Override
     public void takeCancel() {
         super.takeCancel();
@@ -222,7 +226,7 @@ public class TemporaryActivity extends TakePhotoActivity implements LinRegisterV
     @Override
     public void takeSuccess(TResult result) {
         super.takeSuccess(result);
-            showImg(result.getImages());
+        showImg(result.getImages());
     }
 
     private void showImg(ArrayList<TImage> images) {
@@ -241,8 +245,8 @@ public class TemporaryActivity extends TakePhotoActivity implements LinRegisterV
     public void LinSearchView(String message, ClientUserModel clientUserModel) {
         mProgressDialog.dismiss();
         mes = message;
-        if (null!=clientUserModel){
-            if (null!=clientUserModel.getLoginName()&&!"".equals(clientUserModel.getLoginName().toString())){
+        if (null != clientUserModel) {
+            if (null != clientUserModel.getLoginName() && !"".equals(clientUserModel.getLoginName().toString())) {
                 strloginname = clientUserModel.getLoginName().toString();
             }
         }
@@ -254,20 +258,25 @@ public class TemporaryActivity extends TakePhotoActivity implements LinRegisterV
         @Override
         public void run() {
 
-            if (!mes.equals("")){
+            if (!mes.equals("")) {
                 Toast.makeText(TemporaryActivity.this, mes, Toast.LENGTH_SHORT).show();
-            }else {
-                if (!"".equals(strloginname)){
+            } else {
+                if (!"".equals(strloginname)) {
                   /*  loginmin.finish(); */
-                    utils.WriteString("username",strloginname);
+//                    utils.WriteString("username",strloginname);
+//                    Intent intent = new Intent();
+//                    intent.setClass(TemporaryActivity.this,LoginActivity.class);
+//                    startActivity(intent);
+//                    finish();
                     Intent intent = new Intent();
-                    intent.setClass(TemporaryActivity.this,LoginActivity.class);
-                    startActivity(intent);
+                    intent.putExtra("user_name", strloginname);
+                    setResult(12, intent);
                     finish();
                 }
             }
         }
     };
+
     private void getCodeByData(final List<CodeModel> list) {
 
         List<BlueToothModel> listBlue = new ArrayList<>();
