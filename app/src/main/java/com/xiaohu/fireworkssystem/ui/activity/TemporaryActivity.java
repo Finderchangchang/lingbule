@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -260,19 +261,18 @@ public class TemporaryActivity extends TakePhotoActivity implements LinRegisterV
 
             if (!mes.equals("")) {
                 Toast.makeText(TemporaryActivity.this, mes, Toast.LENGTH_SHORT).show();
-            } else {
-                if (!"".equals(strloginname)) {
+            }
+            if (!TextUtils.isEmpty(strloginname)) {
                   /*  loginmin.finish(); */
 //                    utils.WriteString("username",strloginname);
 //                    Intent intent = new Intent();
 //                    intent.setClass(TemporaryActivity.this,LoginActivity.class);
 //                    startActivity(intent);
 //                    finish();
-                    Intent intent = new Intent();
-                    intent.putExtra("user_name", strloginname);
-                    setResult(12, intent);
-                    finish();
-                }
+                Intent intent = new Intent();
+                intent.putExtra("user_name", strloginname);
+                setResult(12, intent);
+                finish();
             }
         }
     };
