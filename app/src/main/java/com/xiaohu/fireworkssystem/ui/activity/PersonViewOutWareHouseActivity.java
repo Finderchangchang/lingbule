@@ -453,7 +453,7 @@ public class PersonViewOutWareHouseActivity extends BaseActivity implements Pers
                 lists.add(list.get(i));
             }
         }
-        if (lists.size()<1){
+        if (lists!=null&&lists.size()<1){
             PersonViewOutWareHouseActivity.this.runOnUiThread(rn);
         }else {
             PersonViewOutWareHouseActivity.this.runOnUiThread(runn);

@@ -1,5 +1,7 @@
 package com.xiaohu.fireworkssystem.http;
 
+import com.xiaohu.fireworkssystem.utils.SSLSocketClient;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -25,13 +27,13 @@ public class OkHttpUtils {
     }
 
     public <T> Call requestGetByAsyn(String port, String method, String json, final ReqCallBack callBack) {
-        String requestUrl = String.format("http://%s/api/values?action=%s&pattern=APP&token=" + token, port, method);
+        String requestUrl = String.format("https://%s/api/values?action=%s&pattern=APP&token=" + token, port, method);
         RequestBody body = RequestBody.create(MEDIA_TYPE_MARKDOWN, json);
         Request request = new Request.Builder().url(requestUrl).post(body).build();
         OkHttpClient.Builder httpBuilder=new OkHttpClient.Builder();
         OkHttpClient okHttpClient = httpBuilder.readTimeout(60, TimeUnit.SECONDS).writeTimeout(60,TimeUnit.SECONDS).connectTimeout(60,TimeUnit.SECONDS)
-               /* .sslSocketFactory(SSLSocketClient.getSSLSocketFactory())//配置
-                .hostnameVerifier(SSLSocketClient.getHostnameVerifier())//配置*/
+                .sslSocketFactory(SSLSocketClient.getSSLSocketFactory())//配置
+                .hostnameVerifier(SSLSocketClient.getHostnameVerifier())//配置
                 .build();
         //OkHttpClient okHttpClient = new OkHttpClient();
         final Call call = okHttpClient.newCall(request);

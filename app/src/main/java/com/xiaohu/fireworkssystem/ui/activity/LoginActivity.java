@@ -222,7 +222,7 @@ public class LoginActivity extends Activity implements SettingView, CheckAPKView
         button_linregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivityForResult(new Intent(LoginActivity.this, TemporaryActivity.class), 11);
+                startActivityForResult(new Intent(LoginActivity.this, LinRegisterActivity.class), 11);
             }
         });
 
@@ -316,6 +316,7 @@ public class LoginActivity extends Activity implements SettingView, CheckAPKView
                 mes = "";
             }
             circularJumpLoadingAnim.setVisibility(View.INVISIBLE);
+
         }
     };
 

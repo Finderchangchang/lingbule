@@ -1,6 +1,5 @@
 package com.xiaohu.fireworkssystem.ui.activity;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -23,7 +22,7 @@ public class LoadingActivity extends BaseActivity implements EasyPermissions.Per
     @Override
     public void initView() {
         setContentView(R.layout.activity_loading);
-        setBrightnessMode(this,0);
+       /* setBrightnessMode(this,0);
         String[] perms = {Manifest.permission.CAMERA, Manifest.permission.CHANGE_WIFI_STATE,Manifest.permission.INTERNET,Manifest.permission.WRITE_SETTINGS,Manifest.permission.WRITE_CONTACTS,Manifest.permission.CHANGE_CONFIGURATION,
         Manifest.permission.ACCESS_NETWORK_STATE,Manifest.permission.BLUETOOTH_ADMIN,Manifest.permission.READ_PHONE_STATE,Manifest.permission.ACCESS_NETWORK_STATE
                 ,Manifest.permission.ACCESS_WIFI_STATE,Manifest.permission.SYSTEM_ALERT_WINDOW
@@ -55,7 +54,7 @@ public class LoadingActivity extends BaseActivity implements EasyPermissions.Per
 
         }
 
-
+*/
 
         if (utils.ReadString("IP").equals("")) {
             utils.WriteString("IP", getResources().getString(R.string.ip));
@@ -63,7 +62,9 @@ public class LoadingActivity extends BaseActivity implements EasyPermissions.Per
 
         CopyData_File cf = new CopyData_File(LoadingActivity.this);
         cf.DoCopy();
-
+        Intent intent = new Intent(LoadingActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override

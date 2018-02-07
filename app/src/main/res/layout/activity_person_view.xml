@@ -92,7 +92,9 @@
                     android:onClick="onClick"
                     android:text="证照识别"
                     android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                   />
                 <Button
                     android:id="@+id/person_read"
                     android:layout_width="70dp"
@@ -103,7 +105,8 @@
                     android:text="读取"
                     android:textColor="@color/white"
                     android:textSize="14sp"
-                    android:visibility="gone"/>
+
+                    />
 
 
             </LinearLayout>

@@ -98,7 +98,6 @@ public class LinRegisterActivity extends AppCompatActivity {
         rl_bluetooth = (RelativeLayout) findViewById(R.id.rl_bluetooth);
         tv_bluetooth_name = (TextView) findViewById(R.id.tv_bluetooth_name);
         tv_CompanyType = (TextView) findViewById(R.id.tv_CompanyType);
-
         edit_CompanyName = (EditText) findViewById(R.id.edit_CompanyName);
         tv_Area = (TextView) findViewById(R.id.tv_Area);
         tv_LicenseNumberValidity = (TextView) findViewById(R.id.tv_LicenseNumberValidity);

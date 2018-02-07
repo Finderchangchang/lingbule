@@ -21,10 +21,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/textView_comname"
-        android:layout_alignBottom="@+id/layout_inv"
+        android:layout_above="@+id/layout_inv"
         android:divider="@drawable/list_item_divider_salemanagement"
         android:dividerHeight="1dp"></com.handmark.pulltorefresh.library.PullToRefreshListView>
-       <TextView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#edbfad"
